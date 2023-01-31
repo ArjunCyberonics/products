@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar, Typography } from '@material-ui/core'
+import { Container, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
 import useStyles from '../../Assets/Styles/styles'
 import { Instagram, Facebook, WhatsApp, LinkedIn } from '@material-ui/icons'

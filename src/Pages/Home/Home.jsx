@@ -3,15 +3,32 @@ import Header from '../../Components/Header/Header'
 import useStyles from '../../Assets/Styles/styles'
 import ProductCard from '../../Components/Cards/ProductCard'
 import Footer from '../../Components/Footer/Footer'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 const Home = () => {
-
     const styles = useStyles()
+    const [products, setProducts] = useState([])
+
+    // fetching data
+    useEffect(() => {
+        axios.get("https://dummyjson.com/products").then((res) => {
+            setProducts(res.data.products)
+        })
+
+    }, [])
+
+    console.log(products)
+
 
     return (
         <>
             <CssBaseline />
+            {/* Header component*/}
             <Header />
+
+            {/*home Body */}
             <main >
                 <div className={styles.container}>
                     <Container maxWidth="lg" >
@@ -25,17 +42,21 @@ const Home = () => {
                 </div>
                 <div className={styles.container}>
                     <Container maxWidth="lg" className={styles.gridContainer}>
-                        <Grid container spacing={4}>
+                        <Grid container spacing={4} className={styles.grid}>
+                            {
+                                products.map((product) => {
+                                    return (
 
-                            <ProductCard />
-                            <ProductCard />
-                            <ProductCard />
-                            <ProductCard />
-
+                                        <ProductCard product={product} />
+                                    )
+                                })
+                            }
                         </Grid>
                     </Container>
                 </div>
             </main>
+
+            {/* Footer component */}
             <Footer />
         </>
     )

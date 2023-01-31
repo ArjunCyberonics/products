@@ -24,8 +24,12 @@ const useStyles = makeStyles((theme) => ({
     gridContainer: {
         padding: theme.spacing(4, 2, 6),
         backgroundColor: "#def3fa",
-        borderRadius: "20px"
+        borderRadius: "20px",
 
+    },
+    grid: {
+        display: 'flex',
+        justifyContent: 'flex-start',
     },
     card: {
         height: '100%',
@@ -34,7 +38,8 @@ const useStyles = makeStyles((theme) => ({
 
     },
     cardMedia: {
-        paddingTop: '56.25%'
+        paddingTop: "56.25%",
+
     },
     cardContent: {
         flexGrow: 1
