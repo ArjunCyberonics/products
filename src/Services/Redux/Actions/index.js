@@ -1,9 +1,3 @@
-export const modalHandler = () => {
-    return {
-        type: 'MODAL_HANDLER'
-    }
-}
-
 
 export const addProduct = (products) => {
     return {

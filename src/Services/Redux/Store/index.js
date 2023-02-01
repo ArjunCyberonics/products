@@ -1,10 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
-import allReducers from '../Reducers'
+import { legacy_createStore as createStore } from 'redux';
+import allReducers from '../Reducers';
 
-const store = configureStore({
-    reducer: {
-        allReducers
-    }
-})
+const store = createStore(
+    allReducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 export default store
