@@ -1,9 +1,11 @@
-import counterReducer from "./Counter";
+import modalOpenReducer from "./ModalOpen";
 import { combineReducers } from "redux";
+import productReducer from "./ProductReducer";
 
 
 const allReducers = combineReducers({
-    counterReducer
+    modal: modalOpenReducer,
+    allProducts: productReducer
 })
 
 export default allReducers

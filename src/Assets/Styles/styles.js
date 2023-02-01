@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
     cardMedia: {
         paddingTop: "56.25%",
+        backgroundSize: "contain"
 
     },
     cardContent: {
@@ -46,7 +47,11 @@ const useStyles = makeStyles((theme) => ({
     },
     CardActions: {
         display: "flex",
-        justifyContent: 'center'
+        justifyContent: 'space-evenly'
+    },
+    rating: {
+        marginTop: "20px",
+        marginBottom: 0
     },
     footer: {
         width: '100%',
@@ -64,16 +69,18 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
 
     },
-    modal: {
+    modalBox: {
         position: 'absolute',
         top: '50%',
         left: '50%',
+        opacity: 1,
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: "60%",
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
         boxShadow: 24,
-        padding: theme.spacing(4, 4, 4)
+        padding: theme.spacing(4, 4, 4),
+        borderRadius: '15px',
+        boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 4px"
     }
 }))
 

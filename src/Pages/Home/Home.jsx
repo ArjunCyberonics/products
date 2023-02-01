@@ -7,22 +7,29 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { increment, decrement } from '../../Services/Redux/Actions'
+import { addProduct } from '../../Services/Redux/Actions'
 
 const Home = () => {
     const styles = useStyles()
-    const [products, setProducts] = useState([])
-
+    // product state from reducer
+    const allProducts = useSelector(state => state.allProducts.products)
+    const dispatch = useDispatch()
 
     // fetching data
+    const fetchData = async () => {
+        const response = await axios
+            .get(`${process.env.REACT_APP_BASE_URL}/products`)
+            .catch((err) => {
+                alert("Something went wrong", err)
+            })
+        dispatch(addProduct(response.data.products))
+    }
+
+    // calling data fetching function in useEffect
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
-            setProducts(res.data.products)
-        })
+        fetchData()
     }, [])
 
-    const counterValue = useSelector(state => state.counterReducer)
-    const dispatch = useDispatch()
 
     return (
         <>
@@ -46,10 +53,11 @@ const Home = () => {
                     <Container maxWidth="lg" className={styles.gridContainer}>
                         <Grid container spacing={4} className={styles.grid}>
                             {
-                                products.map((product) => {
+                                allProducts.map((product) => {
                                     return (
-
-                                        <ProductCard product={product} />
+                                        <Grid item key={product.id} xs={10} sm={6} md={3}   >
+                                            <ProductCard product={product} />
+                                        </Grid>
                                     )
                                 })
                             }

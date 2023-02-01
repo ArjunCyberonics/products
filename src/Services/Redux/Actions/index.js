@@ -1,12 +1,20 @@
-export const increment = () => {
+export const modalHandler = () => {
     return {
-        type: 'INCREMENT'
+        type: 'MODAL_HANDLER'
     }
 }
 
-export const decrement = () => {
+
+export const addProduct = (products) => {
     return {
-        type: 'DECREMENT'
+        type: 'ADD_PRODUCT',
+        payload: products
     }
 }
 
+export const selectedProduct = (product) => {
+    return {
+        type: 'SELECTED_PRODUCT',
+        payload: product
+    }
+}
