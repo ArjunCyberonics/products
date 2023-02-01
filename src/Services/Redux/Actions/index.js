@@ -18,3 +18,9 @@ export const selectedProduct = (product) => {
         payload: product
     }
 }
+
+export const removeOldProduct = () => {
+    return {
+        type: 'REMOVE_OLD_PRODUCT'
+    }
+}

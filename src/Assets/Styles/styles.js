@@ -43,7 +43,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
     cardContent: {
-        flexGrow: 1
+        flexGrow: 1,
+        display: "flex",
+        flexDirection: 'column',
+        alignItems: "flex-start"
+    },
+    cardTitleContainer: {
+        background: '#def3fa',
+        borderRadius: '10px'
     },
     CardActions: {
         display: "flex",
@@ -81,6 +88,10 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(4, 4, 4),
         borderRadius: '15px',
         boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 4px"
+    },
+    imgList: {
+        height: "100%",
+        objectFit: 'contain'
     }
 }))
 

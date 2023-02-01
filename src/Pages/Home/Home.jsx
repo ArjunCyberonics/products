@@ -5,7 +5,6 @@ import ProductCard from '../../Components/Cards/ProductCard'
 import Footer from '../../Components/Footer/Footer'
 import axios from 'axios'
 import { useEffect } from 'react'
-import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addProduct } from '../../Services/Redux/Actions'
 
