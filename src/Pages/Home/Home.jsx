@@ -13,7 +13,7 @@ const Home = () => {
 
     // fetching data
     useEffect(() => {
-        axios.get("https://dummyjson.com/products").then((res) => {
+        axios.get(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
             setProducts(res.data.products)
         })
 

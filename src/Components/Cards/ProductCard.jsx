@@ -3,7 +3,7 @@ import { Card, CardMedia, CardContent, Typography, CardActions, Button, Grid } f
 import useStyles from '../../Assets/Styles/styles'
 
 const ProductCard = ({ product }) => {
-    console.log("product in card", product)
+    // console.log("product in card", product)
     const styles = useStyles()
 
     return (

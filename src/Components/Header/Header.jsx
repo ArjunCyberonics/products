@@ -10,7 +10,7 @@ const Header = () => {
             <AppBar position='relative' >
                 <Toolbar className={styles.toolBar}>
                     <Category className={styles.logo} />
-                    <Typography variant='h5'>Products {process.env.REACT_APP_TITLE}</Typography>
+                    <Typography variant='h5'>Products</Typography>
                 </Toolbar>
 
             </AppBar>
