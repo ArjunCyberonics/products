@@ -46,7 +46,17 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         display: "flex",
         flexDirection: 'column',
-        alignItems: "flex-start"
+        alignItems: "flex-start",
+        paddingBottom: "5px"
+    },
+    discountDiv: {
+        position: 'absolute',
+        zIndex: 100,
+        backgroundColor: "#3f51b5",
+        width: 'auto',
+        height: 'auto',
+        padding: "2px",
+        borderBottomRightRadius: '5px'
     },
     cardTitleContainer: {
         background: '#def3fa',
@@ -57,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-evenly'
     },
     rating: {
-        marginTop: "20px",
+        marginTop: "10px",
         marginBottom: 0
     },
     footer: {
@@ -84,7 +94,6 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translate(-50%, -50%)',
         width: "60%",
         backgroundColor: theme.palette.background.paper,
-        boxShadow: 24,
         padding: theme.spacing(4, 4, 4),
         borderRadius: '15px',
         boxShadow: "rgba(0, 0, 0, 0.56) 0px 22px 70px 4px"

@@ -4,7 +4,6 @@ import useStyles from '../../Assets/Styles/styles'
 
 const Header = () => {
     const styles = useStyles()
-    console.log(process.env.REACT_APP_TITLE)
     return (
         <>
             <AppBar position='relative' >

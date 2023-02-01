@@ -1,4 +1,4 @@
-import { Card, CardMedia, CardContent, Typography, CardActions, Button, Grid, Container } from '@material-ui/core'
+import { Card, CardMedia, CardContent, Typography, CardActions, Button, Container } from '@material-ui/core'
 import { useState } from 'react'
 import useStyles from '../../Assets/Styles/styles'
 import ModalPage from '../Modal/Modal'
@@ -11,8 +11,6 @@ const ProductCard = ({ product }) => {
     const [selectedItemId, setSelectedItemId] = useState('')
     const styles = useStyles()
 
-    // console.log(product)
-
     const modalHandler = (id) => {
         setSelectedItemId(id)
         setModalOpen((prev) => !prev)
@@ -21,12 +19,21 @@ const ProductCard = ({ product }) => {
 
     return (
         <>
+            {/* Discount section */}
+            <div className={styles.discountDiv}>
+                <Typography variant='subtitle2'>{product.discountPercentage} %</Typography>
+            </div>
+
+            {/* Card section */}
             <Card className={styles.card} >
+                {/* Card image section */}
                 <CardMedia
                     image={product.thumbnail}
                     className={styles.cardMedia}
                     title="image"
                 />
+
+                {/* Card content section */}
                 <CardContent className={styles.cardContent}>
                     <Container maxWidth="lg" className={styles.cardTitleContainer}>
                         <Typography variant='h6'>{product.title}</Typography>
@@ -39,6 +46,7 @@ const ProductCard = ({ product }) => {
                         value={product.rating}
                         className={styles.rating}
                     />
+                    <Typography variant='subtitle1' color='textSecondary'>Stock : {product.stock}</Typography>
                 </CardContent>
                 <CardActions className={styles.CardActions}>
                     <Typography variant='h6'>{product.price} $</Typography>
