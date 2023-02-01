@@ -6,21 +6,23 @@ import Footer from '../../Components/Footer/Footer'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement } from '../../Services/Redux/Actions'
 
 const Home = () => {
     const styles = useStyles()
     const [products, setProducts] = useState([])
+
 
     // fetching data
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_BASE_URL}/products`).then((res) => {
             setProducts(res.data.products)
         })
-
     }, [])
 
-    console.log(products)
-
+    const counterValue = useSelector(state => state.counterReducer)
+    const dispatch = useDispatch()
 
     return (
         <>
